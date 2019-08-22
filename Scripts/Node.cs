@@ -216,6 +216,17 @@ namespace XNode {
         public bool HasPort(string fieldName) {
             return ports.ContainsKey(fieldName);
         }
+
+        /// <summary>
+        /// has connections ?
+        /// </summary>
+        public bool HasConnections(){
+            foreach (var item in ports)
+            {
+                if( item.Value.HasConnections()) return true;
+            }
+            return false;
+        }
 #endregion
 
 #region Inputs/Outputs
