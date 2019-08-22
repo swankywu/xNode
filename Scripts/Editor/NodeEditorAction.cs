@@ -441,7 +441,7 @@ namespace XNodeEditor {
         /// <summary> Draw a connection as we are dragging it </summary>
         public void DrawDraggedConnection() {
             if (IsDraggingPort) {
-                Color col = NodeEditorPreferences.GetTypeColor(draggedOutput.ValueType);
+                Color col = Color.red;// NodeEditorPreferences.GetTypeColor(draggedOutput.ValueType);
                 col.a = draggedOutputTarget != null ? 1.0f : 0.6f;
 
                 Rect fromRect;
