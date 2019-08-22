@@ -223,7 +223,7 @@ namespace XNode {
         public bool HasConnections(){
             foreach (var item in ports)
             {
-                if( item.Value.HasConnections()) return true;
+                if( item.Value.IsConnected) return true;
             }
             return false;
         }
