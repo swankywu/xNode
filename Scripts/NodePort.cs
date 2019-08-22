@@ -216,6 +216,16 @@ namespace XNode {
             }
             return result;
         }
+        /// <summary>
+        /// has connections?
+        /// </summary>
+        public bool HasConnections() {
+             for (int i = 0; i < connections.Count; i++) {
+                NodePort port = GetConnection(i);
+                if (port != null) return true;
+            }
+            return false;
+        }
 
         public NodePort GetConnection(int i) {
             //If the connection is broken for some reason, remove it.
