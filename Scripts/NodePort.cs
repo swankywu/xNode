@@ -21,6 +21,7 @@ namespace XNode {
 
         public IO direction { get { return _direction; } }
         public Node.ConnectionType connectionType { get { return _connectionType; } }
+        public void setConnectionType(Node.ConnectionType type){_connectionType = type;}
         public Node.TypeConstraint typeConstraint { get { return _typeConstraint; } }
 
         /// <summary> Is this port connected to anytihng? </summary>
