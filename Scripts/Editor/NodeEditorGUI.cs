@@ -95,6 +95,11 @@ namespace XNodeEditor {
             // Draw tiled background
             GUI.DrawTextureWithTexCoords(rect, gridTex, new Rect(tileOffset, tileAmount));
             GUI.DrawTextureWithTexCoords(rect, crossTex, new Rect(tileOffset + new Vector2(0.5f, 0.5f), tileAmount));
+
+            //create and original position rect on the grid
+            Vector2 pointRectSize = new Vector2(8f, 8f) / zoom;
+            var originPos = new Rect(GridToWindowPosition(Vector2.zero) - pointRectSize * 0.5f, pointRectSize);
+            EditorGUI.DrawRect(originPos, new Color(0.274f, 0.373f, 0.435f));
         }
 
         public void DrawSelectionBox() {
