@@ -69,7 +69,7 @@ namespace XNodeEditor {
             // Call repaint so that the graph window elements respond properly to layout changes coming from Odin    
             if (GUIHelper.RepaintRequested) {
                 GUIHelper.ClearRepaintRequest();
-                window.RepaintWidow();
+                window.RepaintWindow();
             }
 #else
             window.RepaintWidow();
@@ -104,14 +104,14 @@ namespace XNodeEditor {
             // Actions if only one node is selected
             if (Selection.objects.Length == 1 && Selection.activeObject is XNode.Node) {
                 XNode.Node node = Selection.activeObject as XNode.Node;
-                menu.AddItem(new GUIContent("Move To Top"), false, () => NodeEditorWindow.current.MoveNodeToTop(node));
-                menu.AddItem(new GUIContent("Rename"), false, NodeEditorWindow.current.RenameSelectedNode);
+                menu.AddItem(new GUIContent("Move To Top"), false, () => NodeWindowManager.current.MoveNodeToTop(node));
+                menu.AddItem(new GUIContent("Rename"), false, NodeWindowManager.current.RenameSelectedNode);
             }
 
             // Add actions to any number of selected nodes
-            menu.AddItem(new GUIContent("Copy"), false, NodeEditorWindow.current.CopySelectedNodes);
-            menu.AddItem(new GUIContent("Duplicate"), false, NodeEditorWindow.current.DuplicateSelectedNodes);
-            menu.AddItem(new GUIContent("Remove"), false, NodeEditorWindow.current.RemoveSelectedNodes);
+            menu.AddItem(new GUIContent("Copy"), false, NodeWindowManager.current.CopySelectedNodes);
+            menu.AddItem(new GUIContent("Duplicate"), false, NodeWindowManager.current.DuplicateSelectedNodes);
+            menu.AddItem(new GUIContent("Remove"), false, NodeWindowManager.current.RemoveSelectedNodes);
 
             // Custom sctions if only one node is selected
             if (Selection.objects.Length == 1 && Selection.activeObject is XNode.Node) {

@@ -139,9 +139,9 @@ namespace XNodeEditor {
 
                 rect.size = new Vector2(16, 16);
 
-                NodeEditor editor = NodeEditor.GetEditor(port.node, NodeEditorWindow.current);
+                NodeEditor editor = NodeEditor.GetEditor(port.node, NodeWindowManager.current);
                 Color backgroundColor = editor.GetTint();
-                Color col = NodeEditorWindow.current.graphEditor.GetPortColor(port);
+                Color col = NodeWindowManager.current.graphEditor.GetPortColor(port);
                 DrawPortHandle(rect, backgroundColor, col);
 
                 // Register the handle position
@@ -193,9 +193,9 @@ namespace XNodeEditor {
 
             Rect rect = new Rect(position, new Vector2(16, 16));
 
-            NodeEditor editor = NodeEditor.GetEditor(port.node, NodeEditorWindow.current);
+            NodeEditor editor = NodeEditor.GetEditor(port.node, NodeWindowManager.current);
             Color backgroundColor = editor.GetTint();
-            Color col = NodeEditorWindow.current.graphEditor.GetPortColor(port);
+            Color col = NodeWindowManager.current.graphEditor.GetPortColor(port);
             DrawPortHandle(rect, backgroundColor, col);
 
             // Register the handle position
@@ -220,9 +220,9 @@ namespace XNodeEditor {
 
             rect.size = new Vector2(16, 16);
 
-            NodeEditor editor = NodeEditor.GetEditor(port.node, NodeEditorWindow.current);
+            NodeEditor editor = NodeEditor.GetEditor(port.node, NodeWindowManager.current);
             Color backgroundColor = editor.GetTint();
-            Color col = NodeEditorWindow.current.graphEditor.GetPortColor(port);
+            Color col = NodeWindowManager.current.graphEditor.GetPortColor(port);
             DrawPortHandle(rect, backgroundColor, col);
 
             // Register the handle position
@@ -358,9 +358,9 @@ namespace XNodeEditor {
                             port.SwapConnections(nextPort);
 
                             // Swap cached positions to mitigate twitching
-                            Rect rect = NodeEditorWindow.current.portConnectionPoints[port];
-                            NodeEditorWindow.current.portConnectionPoints[port] = NodeEditorWindow.current.portConnectionPoints[nextPort];
-                            NodeEditorWindow.current.portConnectionPoints[nextPort] = rect;
+                            Rect rect = NodeWindowManager.current.portConnectionPoints[port];
+                            NodeWindowManager.current.portConnectionPoints[port] = NodeWindowManager.current.portConnectionPoints[nextPort];
+                            NodeWindowManager.current.portConnectionPoints[nextPort] = rect;
                         }
                     }
                     // Move down
@@ -371,9 +371,9 @@ namespace XNodeEditor {
                             port.SwapConnections(nextPort);
 
                             // Swap cached positions to mitigate twitching
-                            Rect rect = NodeEditorWindow.current.portConnectionPoints[port];
-                            NodeEditorWindow.current.portConnectionPoints[port] = NodeEditorWindow.current.portConnectionPoints[nextPort];
-                            NodeEditorWindow.current.portConnectionPoints[nextPort] = rect;
+                            Rect rect = NodeWindowManager.current.portConnectionPoints[port];
+                            NodeWindowManager.current.portConnectionPoints[port] = NodeWindowManager.current.portConnectionPoints[nextPort];
+                            NodeWindowManager.current.portConnectionPoints[nextPort] = rect;
                         }
                     }
                     // Apply changes
@@ -388,8 +388,8 @@ namespace XNodeEditor {
                     // Apply changes
                     serializedObject.ApplyModifiedProperties();
                     serializedObject.Update();
-                    NodeEditorWindow.current.Repaint();
-                    EditorApplication.delayCall += NodeEditorWindow.current.Repaint;
+                    NodeWindowManager.current.RepaintWindow();
+                    EditorApplication.delayCall += NodeWindowManager.current.RepaintWindow;
                 };
             list.onAddCallback =
                 (ReorderableList rl) => {

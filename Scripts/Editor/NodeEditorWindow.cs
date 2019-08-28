@@ -8,7 +8,7 @@ using Object = UnityEngine.Object;
 namespace XNodeEditor {
     [InitializeOnLoad]
     public partial class NodeEditorWindow : EditorWindow, INodeWindow {
-        public static NodeEditorWindow current;
+        // public static NodeEditorWindow current;
 
         /// <summary> Stores node positions for all nodePorts. </summary>
         public Dictionary<XNode.NodePort, Rect> portConnectionPoints { get { return _portConnectionPoints; } }
@@ -75,7 +75,7 @@ namespace XNodeEditor {
         private float _zoom = 1;
 
         void OnFocus() {
-            current = this;
+            NodeWindowManager.current = this;
             ValidateGraphEditor();
             if (graphEditor != null && NodeEditorPreferences.GetSettings().autoSave) AssetDatabase.SaveAssets();
         }
@@ -204,7 +204,7 @@ namespace XNodeEditor {
         }
 
         //--INodeWindow
-        public void RepaintWidow()=>this.Repaint();
+        public void RepaintWindow()=>this.Repaint();
         public Rect RectPosition { get => this.position; set => this.position = value; }
     }
 }

@@ -8,7 +8,7 @@ using XNodeEditor.Internal;
 namespace XNodeEditor {
     /// <summary> Contains GUI methods </summary>
     public partial class NodeEditorWindow {
-        public NodeGraphEditor graphEditor;
+        public NodeGraphEditor graphEditor{get;set;}
         private List<UnityEngine.Object> selectionCache;
         private List<XNode.Node> culledNodes;
         /// <summary> 19 if docked, 22 if not </summary>

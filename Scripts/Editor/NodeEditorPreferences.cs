@@ -76,11 +76,11 @@ namespace XNodeEditor {
 
         /// <summary> Get settings of current active editor </summary>
         public static Settings GetSettings() {
-            if (lastEditor != XNodeEditor.NodeEditorWindow.current.graphEditor) {
-                object[] attribs = XNodeEditor.NodeEditorWindow.current.graphEditor.GetType().GetCustomAttributes(typeof(XNodeEditor.NodeGraphEditor.CustomNodeGraphEditorAttribute), true);
+            if (lastEditor != XNodeEditor.NodeWindowManager.current.graphEditor) {
+                object[] attribs = XNodeEditor.NodeWindowManager.current.graphEditor.GetType().GetCustomAttributes(typeof(XNodeEditor.NodeGraphEditor.CustomNodeGraphEditorAttribute), true);
                 if (attribs.Length == 1) {
                     XNodeEditor.NodeGraphEditor.CustomNodeGraphEditorAttribute attrib = attribs[0] as XNodeEditor.NodeGraphEditor.CustomNodeGraphEditorAttribute;
-                    lastEditor = XNodeEditor.NodeEditorWindow.current.graphEditor;
+                    lastEditor = XNodeEditor.NodeWindowManager.current.graphEditor;
                     lastKey = attrib.editorPrefsKey;
                 } else return null;
             }
