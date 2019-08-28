@@ -9,7 +9,7 @@ namespace XNodeEditor {
     [CustomNodeGraphEditor(typeof(XNode.NodeGraph))]
     public class NodeGraphEditor : XNodeEditor.Internal.NodeEditorBase<NodeGraphEditor, NodeGraphEditor.CustomNodeGraphEditorAttribute, XNode.NodeGraph> {
         [Obsolete("Use window.position instead")]
-        public Rect position { get { return window.position; } set { window.position = value; } }
+        public Rect position { get { return window.RectPosition; } set { window.RectPosition = value; } }
         /// <summary> Are we currently renaming a node? </summary>
         protected bool isRenaming;
 

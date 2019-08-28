@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 
 namespace XNodeEditor {
     [InitializeOnLoad]
-    public partial class NodeEditorWindow : EditorWindow {
+    public partial class NodeEditorWindow : EditorWindow, INodeWindow {
         public static NodeEditorWindow current;
 
         /// <summary> Stores node positions for all nodePorts. </summary>
@@ -202,5 +202,9 @@ namespace XNodeEditor {
                 windows[i].Repaint();
             }
         }
+
+        //--INodeWindow
+        public void RepaintWidow()=>this.Repaint();
+        public Rect RectPosition { get => this.position; set => this.position = value; }
     }
 }

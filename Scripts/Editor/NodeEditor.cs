@@ -69,10 +69,10 @@ namespace XNodeEditor {
             // Call repaint so that the graph window elements respond properly to layout changes coming from Odin    
             if (GUIHelper.RepaintRequested) {
                 GUIHelper.ClearRepaintRequest();
-                window.Repaint();
+                window.RepaintWidow();
             }
 #else
-            window.Repaint();
+            window.RepaintWidow();
 #endif
 
             inNodeEditor = false;

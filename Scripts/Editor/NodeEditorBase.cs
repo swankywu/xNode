@@ -17,7 +17,7 @@ namespace XNodeEditor.Internal {
 		/// <summary> Custom editors defined with [CustomNodeEditor] </summary>
 		private static Dictionary<Type, Type> editorTypes;
 		private static Dictionary<K, T> editors = new Dictionary<K, T>();
-		public NodeEditorWindow window;
+		public INodeWindow window;
 		public K target;
 		public SerializedObject serializedObject;
 #if ODIN_INSPECTOR
@@ -39,7 +39,7 @@ namespace XNodeEditor.Internal {
 		}
 #endif
 
-		public static T GetEditor(K target, NodeEditorWindow window) {
+		public static T GetEditor(K target, INodeWindow window) {
 			if (target == null) return null;
 			T editor;
 			if (!editors.TryGetValue(target, out editor)) {
