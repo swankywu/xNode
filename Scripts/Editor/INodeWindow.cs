@@ -32,7 +32,7 @@ namespace XNodeEditor
         void PasteNodes(Vector2 pos);
 
         Vector2 WindowToGridPosition(Vector2 windowPosition); 
-
+        bool IsSelected(UnityEngine.Object obj);
 
     }
 

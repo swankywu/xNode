@@ -206,5 +206,6 @@ namespace XNodeEditor {
         //--INodeWindow
         public void RepaintWindow()=>this.Repaint();
         public Rect RectPosition { get => this.position; set => this.position = value; }
+        public bool IsSelected(UnityEngine.Object obj)=> Selection.Contains(obj);
     }
 }

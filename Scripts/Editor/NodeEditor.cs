@@ -95,6 +95,15 @@ namespace XNodeEditor {
             else return DEFAULTCOLOR;
         }
 
+        public bool IsTargetSelected()
+        {
+            return NodeWindowManager.current.IsSelected(target);
+        }
+
+        public virtual Color GetHighlight() {
+            return NodeEditorPreferences.GetSettings().highlightColor;
+        }
+
         public virtual GUIStyle GetBodyStyle() {
             return NodeEditorResources.styles.nodeBody;
         }
