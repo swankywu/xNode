@@ -29,7 +29,7 @@ namespace XNodeEditor {
             [UnityEngine.Serialization.FormerlySerializedAs("zoomOutLimit")]
             public float maxZoom = 5f;
             public float minZoom = 1f;
-            public Color32 highlightColor{get{return GUI.color*1.2f;}set{}}// = new Color32(255, 255, 255, 255);
+            public Color32 highlightColor = new Color32(255, 255, 255, 255);//{get{return GUI.color*1.2f;}set{}}//
             public bool gridSnap = true;
             public bool autoSave = true;
             public bool zoomToMouse = true;

@@ -140,8 +140,10 @@ namespace XNodeEditor {
                 rect.size = new Vector2(16, 16);
 
                 NodeEditor editor = NodeEditor.GetEditor(port.node, NodeWindowManager.current);
-                Color backgroundColor = editor.GetTint();
+                
                 Color col = NodeWindowManager.current.graphEditor.GetPortColor(port);
+                // Color backgroundColor = editor.GetTint();
+                Color backgroundColor = col * (port.IsConnected?1f:0.8f);
                 DrawPortHandle(rect, backgroundColor, col);
 
                 // Register the handle position
@@ -194,8 +196,9 @@ namespace XNodeEditor {
             Rect rect = new Rect(position, new Vector2(16, 16));
 
             NodeEditor editor = NodeEditor.GetEditor(port.node, NodeWindowManager.current);
-            Color backgroundColor = editor.GetTint();
+            // Color backgroundColor = editor.GetTint();
             Color col = NodeWindowManager.current.graphEditor.GetPortColor(port);
+            Color backgroundColor = col * (port.IsConnected?1f:0.8f);
             DrawPortHandle(rect, backgroundColor, col);
 
             // Register the handle position
