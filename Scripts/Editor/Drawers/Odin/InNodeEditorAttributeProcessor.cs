@@ -13,7 +13,7 @@ namespace XNodeEditor {
 		}
 
 		public override bool CanProcessChildMemberAttributes(InspectorProperty parentProperty, MemberInfo member) {
-			if (!NodeEditor.inNodeEditor)
+			if (!NodeEditor.inNodeEditor && !NodeEditor.inOthers)
 				return false;
 
 			if (member.MemberType == MemberTypes.Field) {

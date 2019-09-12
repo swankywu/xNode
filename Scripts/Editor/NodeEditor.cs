@@ -22,6 +22,7 @@ namespace XNodeEditor {
 
 #if ODIN_INSPECTOR
         internal static bool inNodeEditor = false;
+        public static bool inOthers = false;
 #endif
 
         public virtual void OnHeaderGUI() {
