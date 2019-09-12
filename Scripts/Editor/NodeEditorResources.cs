@@ -31,7 +31,7 @@ namespace XNodeEditor {
                 nodeHeader = new GUIStyle();
                 nodeHeader.alignment = TextAnchor.MiddleCenter;
                 nodeHeader.fontStyle = FontStyle.Bold;
-                nodeHeader.normal.textColor = Color.white;
+                nodeHeader.normal.textColor = Color.black;
 
                 nodeBody = new GUIStyle();
                 nodeBody.normal.background = NodeEditorResources.nodeBody;
