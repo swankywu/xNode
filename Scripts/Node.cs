@@ -182,7 +182,7 @@ namespace XNode {
         }
 
         /// <summary> Removes all dynamic ports from the node </summary>
-        [ContextMenu("Clear Dynamic Ports")]
+        // [ContextMenu("Clear Dynamic Ports")]
         public void ClearDynamicPorts() {
             List<NodePort> dynamicPorts = new List<NodePort>(DynamicPorts);
             foreach (NodePort port in dynamicPorts) {
