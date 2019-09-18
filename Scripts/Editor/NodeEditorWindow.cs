@@ -80,19 +80,19 @@ namespace XNodeEditor {
             if (graphEditor != null && NodeEditorPreferences.GetSettings().autoSave) AssetDatabase.SaveAssets();
         }
 
-        [InitializeOnLoadMethod]
-        private static void OnLoad() {
-            Selection.selectionChanged -= OnSelectionChanged;
-            Selection.selectionChanged += OnSelectionChanged;
-        }
+        // [InitializeOnLoadMethod]
+        // private static void OnLoad() {
+        //     Selection.selectionChanged -= OnSelectionChanged;
+        //     Selection.selectionChanged += OnSelectionChanged;
+        // }
 
-        /// <summary> Handle Selection Change events</summary>
-        private static void OnSelectionChanged() {
-            XNode.NodeGraph nodeGraph = Selection.activeObject as XNode.NodeGraph;
-            if (nodeGraph && !AssetDatabase.Contains(nodeGraph)) {
-                Open(nodeGraph);
-            }
-        }
+        // /// <summary> Handle Selection Change events</summary>
+        // private static void OnSelectionChanged() {
+        //     XNode.NodeGraph nodeGraph = Selection.activeObject as XNode.NodeGraph;
+        //     if (nodeGraph && !AssetDatabase.Contains(nodeGraph)) {
+        //         Open(nodeGraph);
+        //     }
+        // }
 
         /// <summary> Make sure the graph editor is assigned and to the right object </summary>
         private void ValidateGraphEditor() {
@@ -176,15 +176,15 @@ namespace XNodeEditor {
             Selection.objects = selection.ToArray();
         }
 
-        [OnOpenAsset(0)]
-        public static bool OnOpen(int instanceID, int line) {
-            XNode.NodeGraph nodeGraph = EditorUtility.InstanceIDToObject(instanceID) as XNode.NodeGraph;
-            if (nodeGraph != null) {
-                Open(nodeGraph);
-                return true;
-            }
-            return false;
-        }
+        // [OnOpenAsset(0)]
+        // public static bool OnOpen(int instanceID, int line) {
+        //     XNode.NodeGraph nodeGraph = EditorUtility.InstanceIDToObject(instanceID) as XNode.NodeGraph;
+        //     if (nodeGraph != null) {
+        //         Open(nodeGraph);
+        //         return true;
+        //     }
+        //     return false;
+        // }
 
         /// <summary>Open the provided graph in the NodeEditor</summary>
         public static void Open(XNode.NodeGraph graph) {
