@@ -3,7 +3,7 @@
  *  Project: NBGame
  *
  *  Created by swanky on 8/28/2019
- *  Copyright (c) 2019 swanky.wu@gmail.com. All rights reserved.
+ *  Copyright (c) 2019 NBGame. All rights reserved.
 ***************************************************************************************************/
 
 using System;
